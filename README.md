@@ -74,6 +74,22 @@ Currently, they use following logic for what i assume, is for detecting gadgets 
                 }
             }
 ```
+
+In 2025, the following sections are whitelisted in Apex Legends:
+```
+Format: <module-name> (<start-offset> <end-offset>) ; 'section-name'
+r5apex_dx12.exe (+1000 → +13d2000)			; '.text'
+ 
+KERNEL32.DLL (+1000 → +7f4bb)   			; '.text' 
+
+ntdll.dll (+1000 → +119f1e)				; '.text' 
+ntdll.dll (+11a000 → +11a592)   			; 'PAGE'  
+ntdll.dll (+11b000 → +11b1f9)   			; 'RT'    
+
+steamnetworkingsockets.dll (+1000 → +2f63a8)		; '.text' 
+steam_api64.dll (+1000 → +243de)			; '.text' 
+```
+
 They seem to use this generic algorithm for detecting a range of gadgets. Further analysis is to be done on it.
 
 # Practical example (usage in Apex Legends)
