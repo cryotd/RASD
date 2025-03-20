@@ -71,6 +71,9 @@ bool tools::is_code_within_legitimate_memory_region(DWORD_PTR rip)
 
     for (const auto& mod : vec_modules)
     {
+        if (mod.m_base == BASE_OF(&__ImageBase))
+            vec_whitelisted_modules.push_back(mod);
+
         for (const std::string& wlmn : vec_whitelisted_module_names)
         {
             if (mod.m_name.find(wlmn) != std::string::npos)
